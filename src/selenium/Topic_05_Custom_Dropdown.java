@@ -84,6 +84,18 @@ public class Topic_05_Custom_Dropdown {
 	  selectCustomDropdown("//span[@aria-owns='color_listbox']//span[@class='k-dropdown-wrap k-state-default']", "//ul[@id='color_listbox']/li", "Grey");
 	  Thread.sleep(3000);
   }
+  @Test
+  public void TC_04_mikerodham() throws Exception {
+	  driver.get("https://mikerodham.github.io/vue-dropdowns/");
+	  selectCustomDropdown("//li[@class='dropdown-toggle']", "//ul[@class='dropdown-menu']//li", "Second Option");
+	  
+	  Thread.sleep(3000);
+	  selectCustomDropdown("//li[@class='dropdown-toggle']", "//ul[@class='dropdown-menu']//li", "First Option");
+	  Thread.sleep(3000);
+	  selectCustomDropdown("//li[@class='dropdown-toggle']", "//ul[@class='dropdown-menu']//li", "Third Option");
+
+	  Thread.sleep(3000);
+  }
 
   @AfterClass
   public void afterClass() {
