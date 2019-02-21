@@ -17,7 +17,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -36,7 +35,9 @@ public class Topic_05_Custom_Dropdown {
 	  driver.get("http://jqueryui.com/resources/demos/selectmenu/default.html");
 	  
 	  selectCustomDropdown("//span[@id='number-button']", "//ul[@id='number-menu']//li[@class='ui-menu-item']/div", "19");
+	  
 	  Assert.assertTrue(driver.findElement(By.xpath("//span[@id='number-button']//span[@class='ui-selectmenu-text' and text()='19']")).isDisplayed());
+	  //Assert.assertTrue(driver.findElement(By.xpath("//span[@id='number-button']//span[@class='ui-selectmenu-text' and text()='19']")).isDisplayed());
 	  Thread.sleep(3000);
 	  
 	  selectCustomDropdown("//span[@id='number-button']", "//ul[@id='number-menu']//li[@class='ui-menu-item']/div", "10");
@@ -76,6 +77,14 @@ public class Topic_05_Custom_Dropdown {
 	  Thread.sleep(3000);
 
   }
+  @Test
+  public void TC_03_Telerik() throws Exception
+  {
+	  driver.get("https://demos.telerik.com/kendo-ui/dropdownlist/index");
+	  selectCustomDropdown("//span[@aria-owns='color_listbox']//span[@class='k-dropdown-wrap k-state-default']", "//ul[@id='color_listbox']/li", "Grey");
+	  Thread.sleep(3000);
+  }
+
   @AfterClass
   public void afterClass() {
     driver.quit();
@@ -105,3 +114,4 @@ public class Topic_05_Custom_Dropdown {
   }
 
 } 
+
