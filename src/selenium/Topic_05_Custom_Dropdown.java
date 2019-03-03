@@ -106,11 +106,7 @@ public class Topic_05_Custom_Dropdown {
 	  
 	  Thread.sleep(3000);
   }
-  
-  @AfterClass
-  public void afterClass() {
-    driver.quit();
-  }
+
   public void selectCustomDropdown(String parentXpath, String childXpath, String valueExpected) {
 	  //click de mo dropdownlist
 	  WebElement parent = driver.findElement(By.xpath(parentXpath));
@@ -159,6 +155,11 @@ public class Topic_05_Custom_Dropdown {
 	  }
 	  
 	  
+  }
+  
+  @AfterClass
+  public void afterClass() {
+    driver.quit();
   }
 
 } 
