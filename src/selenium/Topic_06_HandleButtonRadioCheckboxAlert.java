@@ -29,19 +29,19 @@ public class Topic_06_HandleButtonRadioCheckboxAlert {
 		//driver.get("http://jqueryui.com/resources/demos/selectmenu/default.html");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
-//  @Test
-//	public void TC_01_HandleButton() throws Exception
-//	{
-//	  driver.get("http://live.guru99.com/");
-//	  driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']")).click();
-//	  Assert.assertEquals(driver.getCurrentUrl(), "http://live.guru99.com/index.php/customer/account/login/");
-//	  //JavascriptExecutor javascript = (JavascriptExecutor)driver;
-//	  javascript.executeScript("arguments[0].click();", driver.findElement(By.xpath("//span[text()='Create an Account']")));
-//	  Assert.assertEquals(driver.getCurrentUrl(), "http://live.guru99.com/index.php/customer/account/create/");
-//
-//	  Thread.sleep(3000);
-//	  
-//	}
+  @Test
+	public void TC_01_HandleButton() throws Exception
+	{
+	  driver.get("http://live.guru99.com/");
+	  driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']")).click();
+	  Assert.assertEquals(driver.getCurrentUrl(), "http://live.guru99.com/index.php/customer/account/login/");
+	  //JavascriptExecutor javascript = (JavascriptExecutor)driver;
+	  javascript.executeScript("arguments[0].click();", driver.findElement(By.xpath("//span[text()='Create an Account']")));
+	  Assert.assertEquals(driver.getCurrentUrl(), "http://live.guru99.com/index.php/customer/account/create/");
+
+	  Thread.sleep(3000);
+	  
+	}
 //  @Test
 //	public void TC_02_Checkbox() throws Exception
 //	{
