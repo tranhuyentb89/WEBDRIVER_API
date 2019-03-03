@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -23,10 +24,12 @@ import org.testng.annotations.AfterClass;
 
 public class Topic_05_Custom_Dropdown {
 	WebDriver driver;
+	JavascriptExecutor javascript;
 	@BeforeClass
 	public void beforeClass() {
 		driver = new FirefoxDriver();
-		driver.get("http://jqueryui.com/resources/demos/selectmenu/default.html");
+		javascript = (JavascriptExecutor)driver;
+		//driver.get("http://jqueryui.com/resources/demos/selectmenu/default.html");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
   @Test
@@ -96,7 +99,14 @@ public class Topic_05_Custom_Dropdown {
 
 	  Thread.sleep(3000);
   }
-
+  @Test
+  public void TC_05_JqueryEditable() throws Exception {
+	  driver.get("http://indrimuska.github.io/jquery-editable-select/");
+	  editAble("//div[@id='default-place']/input", "//div[@id='default-place']//li[contains(@class,'es-visible')]", "Land Rover");
+	  
+	  Thread.sleep(3000);
+  }
+  
   @AfterClass
   public void afterClass() {
     driver.quit();
@@ -104,7 +114,6 @@ public class Topic_05_Custom_Dropdown {
   public void selectCustomDropdown(String parentXpath, String childXpath, String valueExpected) {
 	  //click de mo dropdownlist
 	  WebElement parent = driver.findElement(By.xpath(parentXpath));
-	  JavascriptExecutor javascript = (JavascriptExecutor)driver;
 	  javascript.executeScript("arguments[0].click()", parent);
 	  
 	  //wait cho cac item duoc hien thi
@@ -123,6 +132,33 @@ public class Topic_05_Custom_Dropdown {
 			  break;
 		  }
 	  }	  
+  }
+  public void editAble(String parentxPath, String childXpath, String valueExpected)
+  {
+	  //click vao dropdownlist
+	  WebElement parent = driver.findElement(By.xpath(parentxPath));
+	  javascript.executeScript("arguments[0].click()", parent);
+	  
+	  // Go 1 chu bat ky de tim kiem
+	  parent.sendKeys("A");
+	  
+	  // Wait cho den khi tat ca cac item con duoc hien thi
+	  List<WebElement> child = driver.findElements(By.xpath(childXpath));
+	  WebDriverWait wait = new WebDriverWait(driver, 30);
+	  wait.until(ExpectedConditions.visibilityOfAllElements(child));
+	  
+	  for(WebElement childItem: child)
+	  {
+		  if(childItem.getText().equals(valueExpected))
+		  {
+			  javascript.executeScript("arguments[0].scrollIntoView(true);", childItem);
+			  childItem.click();
+			  break;
+
+		  }
+	  }
+	  
+	  
   }
 
 } 
