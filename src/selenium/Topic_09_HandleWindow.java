@@ -76,6 +76,19 @@ public class Topic_09_HandleWindow {
 		closeAllWithoutParentWindows(parentWindowId);
 
 	}
+	@Test
+	public void TC_03() throws Exception {
+		driver.get("http://live.guru99.com/index.php/");
+		String parentWindowId = driver.getWindowHandle();
+		driver.findElement(By.xpath("//a[text()='Mobile']")).click();
+		driver.findElement(By.xpath("//a[text()='Sony Xperia']/parent::h2/following-sibling::div[@class='actions']//a[text()='Add to Compare']\n" + 
+				"\n" + 
+				"")).click();
+		driver.findElement(By.xpath("//a[text()='Samsung Galaxy']/parent::h2/following-sibling::div[@class='actions']//a[text()='Add to Compare']")).click();
+		driver.findElement(By.xpath("//button[@title='Compare']")).click();
+		switchToWindowByTitle("Products Comparison List - Magento Commerce");
+		closeAllWithoutParentWindows(parentWindowId);
+	}
 	//Handle khi chi co 2 cua so window
     public void switchToChildWindow(String parent) throws Exception {
     	//get ra tat ca cac tab dang co
