@@ -106,7 +106,48 @@ public class Topic_05_Custom_Dropdown {
 	  
 	  Thread.sleep(3000);
   }
+@Test
+  public void TC_MultipleSelect() throws Exception
+  {
+  	driver.get("http://multiple-select.wenzhixin.net.cn/examples/#basic.html");
+  	WebElement element = driver.findElement(By.xpath("//div[@class='content']/iframe"));
+  	driver.switchTo().frame(element);
+  	driver.findElement(By.xpath("//button[@class='ms-choice']")).click();
+  	driver.findElement(By.xpath("//span[text()='June']/preceding-sibling::input")).click();
+  	
+  	
+  	WebElement November = driver.findElement(By.xpath("//span[text()='November']/preceding-sibling::input"));
+  	javascript.executeScript("arguments[0].scrollIntoView(true);", November);
+  	driver.findElement(By.xpath("//span[text()='November']/preceding-sibling::input")).click();
+  	
+  	
+  	WebElement January = driver.findElement(By.xpath("//span[text()='January']/preceding-sibling::input"));
+  	javascript.executeScript("arguments[0].scrollIntoView(true);", January);
+  	driver.findElement(By.xpath("//span[text()='January']/preceding-sibling::input")).click();
 
+  	
+  	WebElement August = driver.findElement(By.xpath("//span[text()='August']/preceding-sibling::input"));
+  	javascript.executeScript("arguments[0].scrollIntoView(true);", August);
+  	driver.findElement(By.xpath("//span[text()='August']/preceding-sibling::input")).click();
+  	
+  	Assert.assertTrue(driver.findElement(By.xpath("//span[text()='4 of 12 selected']")).isDisplayed());
+
+  	Thread.sleep(3000);
+  }
+@Test
+public void TC_MultipleSelect02() throws Exception {
+	driver.get("https://semantic-ui.com/modules/dropdown.html");
+	driver.findElement(By.xpath("//div[@class='ui fluid dropdown selection multiple']")).click();
+	driver.findElement(By.xpath("//div[@class='menu transition visible']//div[text()='Angular']")).click();;
+	
+  	WebElement HTML = driver.findElement(By.xpath("//div[@class='menu transition visible']//div[text()='HTML']"));
+  	javascript.executeScript("arguments[0].scrollIntoView(true);", HTML);
+  	HTML.click();
+  	Thread.sleep(3000);
+	
+	
+	
+}
   public void selectCustomDropdown(String parentXpath, String childXpath, String valueExpected) {
 	  //click de mo dropdownlist
 	  WebElement parent = driver.findElement(By.xpath(parentXpath));
