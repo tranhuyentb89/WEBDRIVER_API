@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -19,6 +20,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
@@ -29,9 +31,10 @@ public class Topic_11_UploadFile {
 	String fileName01 ="01.jpg";
 	String fileName02 ="02.jpg";
 	String fileName03 ="03.png";
-	String filePath01 = rootPath + "\\uploadFile\\" + fileName01;
-	String filePath02 = rootPath + "\\uploadFile\\" + fileName02;
-	String filePath03 = rootPath + "\\uploadFile\\" + fileName03;
+	String filePath01 = rootPath + "\\upload\\" + fileName01;
+	String filePath02 = rootPath + "\\upload\\" + fileName02;
+	String filePath03 = rootPath + "\\upload\\" + fileName03;
+	String folderName;
 
 @BeforeClass
 public void beforeClass() {
@@ -42,6 +45,7 @@ public void beforeClass() {
 	// run TC voi Firefox
 		System.setProperty("webdriver.gecko.driver", ".\\lib\\geckodriver.exe");
 		driver = new FirefoxDriver();
+		folderName = "Huyen" + radomNumber();
 	  	javascript = (JavascriptExecutor)driver;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -127,7 +131,7 @@ public void TC_03_AutoIT() throws Exception
 
 }
 
-@Test
+//@Test
 public void TC_04_Robot() throws Exception
 {
 	driver.get("http://blueimp.github.com/jQuery-File-Upload/");
@@ -179,13 +183,44 @@ public void TC_04_Robot() throws Exception
 
 
 }
+@Test
+public void TC_05_UploadFileBai04() throws Exception
+{
+	//open URL
+	driver.get("https://encodable.com/uploaddemo/");
+	WebElement uploadfileBtn = driver.findElement(By.xpath("//input[@id='uploadname1']"));
+	uploadfileBtn.sendKeys(filePath01);
+	WebElement uploadTo = driver.findElement(By.xpath("//select[@name='subdir1']"));
+	Select select = new Select(uploadTo);
+	select.selectByVisibleText("/uploaddemo/files/");
+	driver.findElement(By.xpath("//input[@id='newsubdir1']")).sendKeys(folderName);
+	driver.findElement(By.xpath("//input[@id='formfield-email_address']")).sendKeys("tranhuyentb89@gmail.com");
+	driver.findElement(By.xpath("//input[@id='formfield-first_name']")).sendKeys("Huyen");
+	driver.findElement(By.xpath("//input[@id='uploadbutton']")).click();
+	Thread.sleep(3000);
+	Assert.assertTrue(driver.findElement(By.xpath("//dd[text()='Email Address: tranhuyentb89@gmail.com']")).isDisplayed());
+	Assert.assertTrue(driver.findElement(By.xpath("//dd[text()='First Name: Huyen']")).isDisplayed());
+	Assert.assertTrue(driver.findElement(By.xpath("//a[@href and text()='"+fileName01+"']")).isDisplayed());
+	driver.findElement(By.xpath("//a[@href and text()='View Uploaded Files']")).click();
+	driver.findElement(By.xpath("//a[text()='"+folderName+"']")).click();
+	Assert.assertTrue(driver.findElement(By.xpath("//a[text()='"+fileName01+"']")).isDisplayed());
+	Thread.sleep(2000);
+	
+}
 public Object clickToElementByJS(String xpathName) {
-    WebElement element = driver.findElement(By.xpath(xpathName));
-    return javascript.executeScript("arguments[0].click();", element);
+  WebElement element = driver.findElement(By.xpath(xpathName));
+  return javascript.executeScript("arguments[0].click();", element);
 }
 
+public int radomNumber()
+{
+	Random radom = new Random();
+	return radom.nextInt(999999);
+ 
+}
 @AfterClass
 public void afterClass() {
-  driver.quit();
+driver.quit();
 }
+
 }

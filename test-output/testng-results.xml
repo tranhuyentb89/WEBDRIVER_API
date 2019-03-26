@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8610" started-at="2019-01-23T17:03:22Z" finished-at="2019-01-23T17:03:30Z">
+  <suite name="Default suite" duration-ms="23433" started-at="2019-03-26T07:06:44Z" finished-at="2019-03-26T07:07:08Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8610" started-at="2019-01-23T17:03:22Z" finished-at="2019-01-23T17:03:30Z">
-      <class name="selenium.Topic_01_Setup_Enviroment">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:selenium.Topic_01_Setup_Enviroment@c39f790]" name="beforeClass" is-config="true" duration-ms="8271" started-at="2019-01-24T00:03:22Z" finished-at="2019-01-24T00:03:30Z">
+    <test name="Default test" duration-ms="23433" started-at="2019-03-26T07:06:44Z" finished-at="2019-03-26T07:07:08Z">
+      <class name="selenium.Topic_11_UploadFile">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:selenium.Topic_11_UploadFile@2ac1fdc4]" name="beforeClass" is-config="true" duration-ms="5716" started-at="2019-03-26T14:06:44Z" finished-at="2019-03-26T14:06:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="TC_01()[pri:0, instance:selenium.Topic_01_Setup_Enviroment@c39f790]" name="TC_01" duration-ms="11" started-at="2019-01-24T00:03:30Z" finished-at="2019-01-24T00:03:30Z">
+        <test-method status="PASS" signature="TC_05_UploadFileBai04()[pri:0, instance:selenium.Topic_11_UploadFile@2ac1fdc4]" name="TC_05_UploadFileBai04" duration-ms="17150" started-at="2019-03-26T14:06:50Z" finished-at="2019-03-26T14:07:07Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_01 -->
-        <test-method status="PASS" signature="TC_02_CheckTitle()[pri:0, instance:selenium.Topic_01_Setup_Enviroment@c39f790]" name="TC_02_CheckTitle" duration-ms="7" started-at="2019-01-24T00:03:30Z" finished-at="2019-01-24T00:03:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_02_CheckTitle -->
-        <test-method status="PASS" signature="TC_03_Homepage_logo_Displayed()[pri:0, instance:selenium.Topic_01_Setup_Enviroment@c39f790]" name="TC_03_Homepage_logo_Displayed" duration-ms="59" started-at="2019-01-24T00:03:30Z" finished-at="2019-01-24T00:03:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_03_Homepage_logo_Displayed -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:selenium.Topic_01_Setup_Enviroment@c39f790]" name="afterClass" is-config="true" duration-ms="249" started-at="2019-01-24T00:03:30Z" finished-at="2019-01-24T00:03:30Z">
+        </test-method> <!-- TC_05_UploadFileBai04 -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:selenium.Topic_11_UploadFile@2ac1fdc4]" name="afterClass" is-config="true" duration-ms="558" started-at="2019-03-26T14:07:07Z" finished-at="2019-03-26T14:07:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- selenium.Topic_01_Setup_Enviroment -->
+      </class> <!-- selenium.Topic_11_UploadFile -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
