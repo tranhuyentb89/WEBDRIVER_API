@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23433" started-at="2019-03-26T07:06:44Z" finished-at="2019-03-26T07:07:08Z">
+  <suite name="Default suite" duration-ms="19051" started-at="2019-03-31T16:43:05Z" finished-at="2019-03-31T16:43:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23433" started-at="2019-03-26T07:06:44Z" finished-at="2019-03-26T07:07:08Z">
-      <class name="selenium.Topic_11_UploadFile">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:selenium.Topic_11_UploadFile@2ac1fdc4]" name="beforeClass" is-config="true" duration-ms="5716" started-at="2019-03-26T14:06:44Z" finished-at="2019-03-26T14:06:50Z">
+    <test name="Default test" duration-ms="19051" started-at="2019-03-31T16:43:05Z" finished-at="2019-03-31T16:43:24Z">
+      <class name="selenium.Topic_12_WebDriverWait">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:selenium.Topic_12_WebDriverWait@2ac1fdc4]" name="beforeTest" is-config="true" duration-ms="7802" started-at="2019-03-31T23:43:05Z" finished-at="2019-03-31T23:43:13Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="TC_05_UploadFileBai04()[pri:0, instance:selenium.Topic_11_UploadFile@2ac1fdc4]" name="TC_05_UploadFileBai04" duration-ms="17150" started-at="2019-03-26T14:06:50Z" finished-at="2019-03-26T14:07:07Z">
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="TC_04()[pri:0, instance:selenium.Topic_12_WebDriverWait@2ac1fdc4]" name="TC_04" duration-ms="10636" started-at="2019-03-31T23:43:13Z" finished-at="2019-03-31T23:43:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_05_UploadFileBai04 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:selenium.Topic_11_UploadFile@2ac1fdc4]" name="afterClass" is-config="true" duration-ms="558" started-at="2019-03-26T14:07:07Z" finished-at="2019-03-26T14:07:08Z">
+        </test-method> <!-- TC_04 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:selenium.Topic_12_WebDriverWait@2ac1fdc4]" name="afterTest" is-config="true" duration-ms="603" started-at="2019-03-31T23:43:23Z" finished-at="2019-03-31T23:43:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- selenium.Topic_11_UploadFile -->
+        </test-method> <!-- afterTest -->
+      </class> <!-- selenium.Topic_12_WebDriverWait -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
